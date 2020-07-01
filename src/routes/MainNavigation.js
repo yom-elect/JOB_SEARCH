@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 //import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AuthScreen from "../screens/AuthScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
@@ -42,9 +42,49 @@ const Review = (props) => {
 const Home = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="map" component={MapScreen} />
-      <Tab.Screen name="deck" component={DeckScreen} />
-      <Tab.Screen name="review" component={Review} />
+      <Tab.Screen
+        name="map"
+        component={MapScreen}
+        options={(props) => ({
+          title: "Map",
+          tabBarIcon: ({ focused, color }) => (
+            <MaterialCommunityIcons
+              name={"crosshairs"}
+              size={24}
+              color={color}
+            />
+          ),
+          // tabBarLabel: { fontSize: 12 },
+        })}
+      />
+      <Tab.Screen
+        name="deck"
+        component={DeckScreen}
+        options={(props) => ({
+          title: "Jobs",
+          tabBarIcon: ({ focused, color }) => (
+            <MaterialCommunityIcons
+              name={"briefcase"}
+              size={24}
+              color={color}
+            />
+          ),
+          // tabBarLabel: { fontSize: 12 },
+        })}
+      />
+      <Tab.Screen
+        name="review"
+        component={Review}
+        options={(props) => ({
+          title: "Review Jobs",
+          tabBarIcon: ({ focused, color }) => (
+            <MaterialCommunityIcons name={"heart"} size={24} color={color} />
+          ),
+          // tabBarLabel: () => {
+          //   fontSize: 22;
+          // },
+        })}
+      />
     </Tab.Navigator>
   );
 };
