@@ -1,5 +1,8 @@
 {
   "expo": {
+    "facebookScheme": "fb271589574066094",
+    "facebookAppId": "271589574066094",
+    "facebookDisplayName": "Jobs",
     "name": "jobs",
     "slug": "jobs",
     "version": "1.0.0",
@@ -13,9 +16,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
