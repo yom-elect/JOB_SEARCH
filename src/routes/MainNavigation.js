@@ -22,6 +22,7 @@ const Review = (props) => {
         component={ReviewScreen}
         options={({ navigation }) => ({
           title: "Review Jobs",
+          headerLeft: () => {},
           headerRight: () => (
             <AntDesign
               name="setting"

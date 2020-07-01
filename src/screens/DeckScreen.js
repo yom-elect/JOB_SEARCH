@@ -4,9 +4,9 @@ import { View, StyleSheet, Platform } from "react-native";
 import Swipe from "../components/Swipe";
 import MapView from "react-native-maps";
 import * as actions from "../store/actions";
-import { Card, Title, Paragraph } from "react-native-paper";
+import { Card, Title, Paragraph, Button } from "react-native-paper";
 
-const DeckScreen = () => {
+const DeckScreen = (props) => {
   const dispatch = useDispatch();
   const jobs = useSelector((state) => state.jobs.jobs);
   // console.log(jobs);
@@ -39,8 +39,16 @@ const DeckScreen = () => {
   );
 
   const renderNoMoreCards = () => (
-    <Card>
+    <Card style={{ height: 100, marginTop: 20 }}>
       <Card.Title title="No More Jobs" />
+      <Button
+        mode="contained"
+        color="#03A9F4"
+        icon="crosshairs-gps"
+        onPress={() => props.navigation.navigate("map")}
+      >
+        Explore Maps
+      </Button>
     </Card>
   );
 

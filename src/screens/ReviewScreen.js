@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { View, ScrollView, StyleSheet, Linking } from "react-native";
 import { Card, Title, Paragraph, Button } from "react-native-paper";
 import MapView from "react-native-maps";

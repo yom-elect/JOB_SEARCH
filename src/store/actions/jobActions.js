@@ -114,3 +114,9 @@ export const likeJob = (job) => {
     payload: job,
   };
 };
+
+export const clearLikedJobs = () => {
+  return {
+    type: types.CLEAR_LIKED_JOBS,
+  };
+};
