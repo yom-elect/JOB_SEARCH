@@ -22,6 +22,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "com.yomi.jobs",
+      "versionCode": 1
     }
   }
 }
