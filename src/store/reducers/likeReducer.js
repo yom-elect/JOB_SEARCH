@@ -1,6 +1,5 @@
 import * as types from "../actions/actionConstants";
 import _ from "lodash";
-
 const likeReducer = (state = [], action) => {
   switch (action.type) {
     case types.LIKE_JOB:

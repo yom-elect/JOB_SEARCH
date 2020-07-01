@@ -4,16 +4,19 @@ import { StyleSheet, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import MainNavigator from "./src/routes/MainNavigation";
 import { Provider } from "react-redux";
-import store from "./src/store";
+import storeInfo from "./src/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <View style={styles.container}>
-          <MainNavigator />
-        </View>
-      </NavigationContainer>
+    <Provider store={storeInfo().store}>
+      <PersistGate loading={null} persistor={storeInfo().persisted}>
+        <NavigationContainer>
+          <View style={styles.container}>
+            <MainNavigator />
+          </View>
+        </NavigationContainer>
+      </PersistGate>
     </Provider>
   );
 }
