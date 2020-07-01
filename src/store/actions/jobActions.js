@@ -2,6 +2,7 @@ import axios from "axios";
 import * as types from "./actionConstants";
 import reverseGeocode from "latlng-to-zip";
 import qs from "qs";
+import config from "../../../config";
 
 const JOB_ROOT_URL = "https://api.indeed.com/ads/apisearch?";
 
@@ -91,10 +92,7 @@ const buildJobUrl = (zip) => {
 export const fetchJobs = (region, callback) => {
   return async (dispatch) => {
     try {
-      let zip = await reverseGeocode(
-        region,
-        "AIzaSyBd74osH1t02xl9M1aukL4g3bifZXw_Lw0"
-      );
+      let zip = await reverseGeocode(region, config.GOOGLE_GEOLOCATION_KEY);
       const url = buildJobUrl(zip);
       //const { data } = await axios.get(url);
       dispatch({

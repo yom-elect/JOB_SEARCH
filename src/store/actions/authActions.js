@@ -1,6 +1,7 @@
 import * as types from "./actionConstants";
 import AsyncStorage from "@react-native-community/async-storage";
 import * as Facebook from "expo-facebook";
+import config from "../../../config";
 
 export const facebookLogin = () => {
   return async (dispatch) => {
@@ -20,9 +21,9 @@ export const facebookLogin = () => {
 
 const doFacebookLogin = async (dispatch) => {
   try {
-    await Facebook.initializeAsync("271589574066094");
+    await Facebook.initializeAsync(config.FACEBOOK_ID);
     const { type, token } = await Facebook.logInWithReadPermissionsAsync(
-      "271589574066094",
+      config.FACEBOOK_ID,
       {
         permissions: ["public_profile"],
       }
